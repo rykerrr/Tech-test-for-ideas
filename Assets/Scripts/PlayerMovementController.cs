@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Object = System.Object;
+using EventSystem = UnityEngine.EventSystems.EventSystem;
 using InputField = UnityEngine.UI.InputField;
 
 #pragma warning disable 0649
@@ -19,7 +19,6 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float sprintChangeDelta = 20f;
 
     private PlayerCameraController camController;
-    private Rotation fireControl;
     private Camera mainCam;
     private Rigidbody thisRb = null;
     private bool isGrounded => CheckIfGrounded();
@@ -40,7 +39,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         thisRb = GetComponent<Rigidbody>();
         camController = GetComponent<PlayerCameraController>();
-        fireControl = GetComponent<Rotation>();
         thisAnimator = GetComponent<Animator>();
 
         mainCam = Camera.main;
@@ -126,7 +124,9 @@ public class PlayerMovementController : MonoBehaviour
 
                 //BodyFollowsMouse();
 
-                if (leftShift && thisRb.velocity.y <= 0.06f && !fireControl.GetFiringState)
+                // GetFiringState is gonna make problems but whatever
+                // firing state is a bool not an enum, isFiring in GunBase
+                if (leftShift && thisRb.velocity.y <= 0.06f/*&& !fireControl.GetFiringState*/)
                 {
                     if (isCrouching)
                     {
@@ -247,89 +247,6 @@ public class PlayerMovementController : MonoBehaviour
             //Debug.Log("hit nothing");
             return false;
         }
-    }
-
-    private void BodyFollowsMouse()
-    {
-        Vector3 hitPos = new Vector3();
-        Vector2 screenCursorPos = camController.actualCursorPos;
-        Ray ray = mainCam.ScreenPointToRay(screenCursorPos);
-        RaycastHit[] hits = Physics.RaycastAll(ray, float.MaxValue);
-
-        if (hits.Length > 0)
-        {
-            for (int i = 0; i < hits.Length; i++)
-            {
-                if (hits[i].collider)
-                {
-                    if (hits[i].collider.transform == transform || hits[i].collider.transform
-                    ) // this check never runs for some reason
-                    {
-                        // check if object itself is ignored or this
-                        Debug.Log("hit ignroed obj or itself");
-                        if (i == hits.Length - 1)
-                        {
-                            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-                                Input.mousePosition.y, mainCam.farClipPlane));
-                        }
-
-                        continue;
-                    }
-                    else // didnt directly hit itself or ignored obj
-                    {
-                        // if it isnt perform other checks
-                        if (hits[i].collider.attachedRigidbody)
-                        {
-                            // checks the main rigidbody (if the object has child colliders, then this is set to the parent rb
-                            if (hits[i].collider.attachedRigidbody.gameObject == gameObject)
-                            {
-                                // if the rigidbody's gameobject is the gameobject or ignored one
-                                if (i == hits.Length - 1)
-                                {
-                                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-                                        Input.mousePosition.y, mainCam.farClipPlane));
-                                }
-
-                                continue;
-                            }
-                            else
-                            {
-                                // rigidbody isnt gameobject or ignored one
-                                Debug.Log("set here 1");
-
-                                hitPos = hits[i].rigidbody.transform.position;
-                                break;
-                            }
-                        } // doesnt have an rb attached 
-                        else
-                        {
-                            Debug.Log("set here 2");
-
-                            hitPos = hits[i].point;
-                            break;
-                        }
-                    }
-                }
-
-                if (i == hits.Length - 1)
-                {
-                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
-                        mainCam.farClipPlane));
-                }
-            }
-        }
-        else
-        {
-            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
-                mainCam.farClipPlane));
-        }
-
-        Vector3 dir = hitPos - transform.position;
-        Vector3 originDir = hitPos - transform.position;
-        transform.forward = new Vector3(dir.x, 0f, dir.z);
-        Debug.DrawRay(transform.position, hitPos - transform.position, Color.green);
-        //mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        //Debug.DrawLine(transform.position, mousePos);
     }
 }
 #pragma warning restore 0649

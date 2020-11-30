@@ -573,11 +573,11 @@ GameObject:
   - component: {fileID: 113475128}
   - component: {fileID: 113475127}
   - component: {fileID: 113475126}
-  - component: {fileID: 113475125}
   - component: {fileID: 113475130}
-  - component: {fileID: 113475129}
   - component: {fileID: 113475131}
   - component: {fileID: 113475132}
+  - component: {fileID: 113475125}
+  - component: {fileID: 113475129}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -628,39 +628,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113475123}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e74ee5f19b24e2438dba0e2a8c7fb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsTargettable:
+  whatIsTarget:
     serializedVersion: 2
     m_Bits: 4294967295
-  customCursorInputStuff: {fileID: 1985562630}
-  cursorVisualStuff: {fileID: 1985562629}
-  aceCursor: {fileID: 1313735448}
-  ammoOverheatIndicator: {fileID: 269806464}
-  sightFireDelayIndicator: {fileID: 1476001701}
-  indicatorMaterial: {fileID: 2100000, guid: 7832db39225d854439fc6736861974fe, type: 2}
-  overheatLight: {fileID: 590896272}
-  rayPrefab: {fileID: 1416793151344249801, guid: fc9d8415ebe5dd6469348c17c2fa4a23,
-    type: 3}
-  rayGunFireEffectPrefab: {fileID: 6223086900766524270, guid: d6db1e7c244ab5449b70cac79b1f0851,
-    type: 3}
-  rayContainer: {fileID: 840006887}
-  origin: {fileID: 1635886435}
   gun: {fileID: 746549612}
-  firePoint: {fileID: 1952766115}
-  currentRayType: 1
-  mousePos: {x: 0, y: 0, z: 0}
-  rayLifeTime: 0.06
-  bulletHoleLifetime: 2
-  fireDelay: 0.1
   rotationDelta: 30
-  fancyRaySpeedDelta: 30
-  overheatMultiplier: 0.9
-  heatCoolDelay: 1
-  heatPercentage: 0
 --- !u!114 &113475127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,10 +729,9 @@ MonoBehaviour:
   aceCursor: {fileID: 1313735448}
   customCursorInputStuff: {fileID: 1985562630}
   cursorVisualStuff: {fileID: 1985562629}
-  settings: {fileID: 1009690749}
   rayContainer: {fileID: 840006887}
   currentRayType: 0
-  whatIsTargettable:
+  whatIsTarget:
     serializedVersion: 2
     m_Bits: 4294967295
   ammoOverheatIndicator: {fileID: 269806464}
@@ -786,6 +762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99486b8041694794bbab65b295bc5e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equippedGun: {fileID: 113475131}
 --- !u!1 &119625759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayType: 0
+  customCursorInputController: {fileID: 1985562630}
+  customCursorIFF: {fileID: 1985562629}
 --- !u!4 &1009690750
 Transform:
   m_ObjectHideFlags: 0
@@ -6123,7 +6102,7 @@ PrefabInstance:
     - target: {fileID: 8806663921064357638, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8806663920921409512, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
@@ -6249,30 +6228,30 @@ PrefabInstance:
     - target: {fileID: 8806663921672984577, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921672984577, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574756920, guid: 61dbc1f3dbc962644b8714d94d9483db, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574756920, guid: 61dbc1f3dbc962644b8714d94d9483db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1544290548592963938, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1544290548592963938, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8674860707109924065, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
@@ -6287,37 +6266,37 @@ PrefabInstance:
     - target: {fileID: 2926361557428920469, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2926361557428920469, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921733889655, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921733889655, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921733889655, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921652345015, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663921652345015, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8806663920866455690, guid: 61dbc1f3dbc962644b8714d94d9483db,
         type: 3}

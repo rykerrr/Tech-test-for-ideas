@@ -86,6 +86,7 @@
             <e p="NewCursorEntry.cs" t="Include" />
             <e p="PlayerBodyRotation.cs" t="Include" />
             <e p="PlayerGameInput.cs" t="Include" />
+            <e p="RaycastHelper.cs" t="Include" />
             <e p="RaycastTest.cs" t="Include" />
             <e p="Rotation.cs" t="Include" />
             <e p="TextureMergerTest.cs" t="Include" />

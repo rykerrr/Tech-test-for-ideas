@@ -20,48 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="905da1a6-d301-4a0f-b206-096a9bd6b33f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crouch.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Crouch.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Sprint.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FlexibleColorPicker/Scripts/FlexibleColorPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FlexibleColorPicker/Scripts/FlexibleColorPicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NewCursorListing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NewCursorListing.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/ExtraThickCursor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/ExtraThickCursor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/16.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ExtraThickCursor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ExtraThickCursor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/Pichjorina.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/Pichjorina.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThickOpenCircle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThickOpenCircle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThinOpenCircle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThinOpenCircle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestCursorChangeMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestCursorChangeMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCursorController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCursorController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +44,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/b1/3fbf0b73/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/5c/2ba1c534/KeyCode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/RaycastHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/CsCursorSaveEntry.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,21 +75,22 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/wAceCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorMenuCSController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/TextureMergerTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/NewCursorEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomCursorVisualController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorSaveLoad.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorMenuController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GameSceneSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BasicRay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GunBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Playerinput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/RaycastHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/NewCursorEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GameSceneSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerGameInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Rotation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GunBase.cs" />
       </list>
     </option>
   </component>
@@ -194,6 +159,7 @@
       <workItem from="1606592880995" duration="5204000" />
       <workItem from="1606612385900" duration="323000" />
       <workItem from="1606646661022" duration="592000" />
+      <workItem from="1606745515177" duration="8820000" />
     </task>
     <servers />
   </component>
@@ -243,10 +209,10 @@
       <screen x="-1360" y="155" width="1360" height="738" />
     </state>
     <state x="-1088" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604594146448" />
-    <state x="609" y="124" width="701" height="801" key="find.popup" timestamp="1606066401269">
+    <state x="609" y="124" width="701" height="801" key="find.popup" timestamp="1606752054210">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="609" y="124" width="701" height="801" key="find.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606066401269" />
+    <state x="609" y="124" width="701" height="801" key="find.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606752054210" />
     <state x="-1024" y="237" key="run.anything.popup" timestamp="1604598080813">
       <screen x="-1360" y="155" width="1360" height="738" />
     </state>
