@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="905da1a6-d301-4a0f-b206-096a9bd6b33f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crouch.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Crouch.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Sprint.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FlexibleColorPicker/Scripts/FlexibleColorPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FlexibleColorPicker/Scripts/FlexibleColorPicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NewCursorListing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NewCursorListing.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/ExtraThickCursor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/ExtraThickCursor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/normalgreycrate 2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/16.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ExtraThickCursor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ExtraThickCursor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/Pichjorina.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/Pichjorina.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThickOpenCircle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThickOpenCircle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThinOpenCircle.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/ThinOpenCircle.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate 3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Custom_Cursors/normalgreycrate.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestCursorChangeMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestCursorChangeMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCursorController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomCursorController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/TextureScale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/6b/9fa446ca/SerializableAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5406A456-CF73-4443-B3D0-2A7D123287F1/7c/387450d6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/9e/3ac7746a/Cursor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/GameSceneSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/b1/3fbf0b73/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/5c/2ba1c534/KeyCode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/CsCursorSaveEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/0c/498de92a/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/CustomCursorImageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/GunBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Temp/PlayerGameInput.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorListingEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InheritableSingleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/TextureScale.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CsCursorSaveEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CsCustomCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CsCustomCursorEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomCursorController1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CustomCursorImageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomCursorController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CustomCursorRaycastTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomCursorInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerHumanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" />
+        <option value="$PROJECT_DIR$/Assets/FlexibleColorPicker/Scripts/FlexibleColorPicker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/wAceCursor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorMenuCSController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/TextureMergerTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/NewCursorEntry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomCursorVisualController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorSaveLoad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GameSceneSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BasicRay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GunBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Playerinput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerGameInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Rotation.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iySeE3mP2TaYWBMeWR4ym9yY31" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Builds/beeboo1\wAce project attempt.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Niknesh\Desktop\Builds\beeboo1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="905da1a6-d301-4a0f-b206-096a9bd6b33f" name="Default Changelist" comment="" />
+      <created>1602878570967</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602878570967</updated>
+      <workItem from="1602878614542" duration="722000" />
+      <workItem from="1603551051864" duration="2109000" />
+      <workItem from="1603581771227" duration="657000" />
+      <workItem from="1603638962940" duration="10978000" />
+      <workItem from="1603698440404" duration="14940000" />
+      <workItem from="1603813938656" duration="10079000" />
+      <workItem from="1603899887027" duration="4390000" />
+      <workItem from="1604507936893" duration="7259000" />
+      <workItem from="1604593720975" duration="10008000" />
+      <workItem from="1606062095160" duration="9405000" />
+      <workItem from="1606085533799" duration="3630000" />
+      <workItem from="1606163018992" duration="6143000" />
+      <workItem from="1606177201980" duration="4124000" />
+      <workItem from="1606592880995" duration="5204000" />
+      <workItem from="1606612385900" duration="323000" />
+      <workItem from="1606646661022" duration="592000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1226" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604510394968">
+      <screen x="-1360" y="155" width="1360" height="738" />
+    </state>
+    <state x="-1226" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604510394968" />
+    <state x="-845" y="238" key="RiderGenerateDialog" timestamp="1604597225391">
+      <screen x="-1360" y="155" width="1360" height="738" />
+    </state>
+    <state x="-845" y="238" key="RiderGenerateDialog/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604597225391" />
+    <state x="727" y="248" key="RiderGenerateDialog/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1603910867487" />
+    <state x="424" y="182" width="998" height="739" key="SettingsEditor" timestamp="1603714414189">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="424" y="182" width="998" height="739" key="SettingsEditor/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1603714414189" />
+    <state width="254" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1604517072928">
+      <screen x="-1360" y="155" width="1360" height="738" />
+    </state>
+    <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604517072928" />
+    <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog" timestamp="1602881270367">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1602881270367" />
+    <state x="-1088" y="255" key="Vcs.Push.Dialog.v2" timestamp="1604594146448">
+      <screen x="-1360" y="155" width="1360" height="738" />
+    </state>
+    <state x="-1088" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604594146448" />
+    <state x="609" y="124" width="701" height="801" key="find.popup" timestamp="1606066401269">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="609" y="124" width="701" height="801" key="find.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606066401269" />
+    <state x="-1024" y="237" key="run.anything.popup" timestamp="1604598080813">
+      <screen x="-1360" y="155" width="1360" height="738" />
+    </state>
+    <state x="-1024" y="237" key="run.anything.popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604598080813" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1606595878965">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-919" y="315" width="672" height="477" key="search.everywhere.popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1604597215545" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606595878965" />
+  </component>
+</project>

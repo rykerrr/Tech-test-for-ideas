@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 #pragma warning disable 0649
 #pragma warning disable 0414
@@ -14,7 +16,7 @@ public class CameraControllerTest : MonoBehaviour
 
     //these will be available in the editor
     [SerializeField] private GameObject theCamera;
-    [SerializeField] private CustomCursorController customCursorStuff;
+    [SerializeField] private CustomCursorInputController customCursorInputStuff;
     [SerializeField] private float followDistance = 5.0f;
     [SerializeField] private float mouseSensitivityX = 4.0f;
     [SerializeField] private float mouseSensitivityY = 2.0f;
@@ -25,7 +27,13 @@ public class CameraControllerTest : MonoBehaviour
     private bool isPaused = false;
     private float zoom = (MAX_ZOOM_LIMIT - MIN_ZOOM_LIMIT) / 2f;
     private Vector3 offsetVector;
+    
+    private MouseHelperStuff mouseHelper;
 
+    private void Awake()
+    {
+        mouseHelper = new MouseHelperStuff();
+    }
 
     void Start()
     {
@@ -36,17 +44,16 @@ public class CameraControllerTest : MonoBehaviour
         offsetVector = theCamera.transform.position - transform.position;
          // Cursor.lockState = CursorLockMode.Locked;
 
-        //hide the cursor and lock the cursor to center
+         //hide the cursor and lock the cursor to center
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        if (Mouse.current.middleButton.isPressed || Mouse.current.rightButton.isPressed)
         {
             //if we are not paused, get the mouse movement and adjust the camera
             //position and rotation to reflect this movement around player
-            CustomCursorController.canCustomCursorMove = false;
-            Vector2 cameraMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            Vector2 cameraMovement = Mouse.current.delta.ReadValue();
 
             //first we place the camera at the position of the player + height offset
             theCamera.transform.position = gameObject.transform.position + new Vector3(0, heightOffset, 0);
@@ -61,36 +68,21 @@ public class CameraControllerTest : MonoBehaviour
             //then we move out to the desired follow distance
             theCamera.transform.position -= theCamera.transform.forward * zoom;
         }
-        else if (Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(2))
+        else if (Mouse.current.middleButton.wasReleasedThisFrame || Mouse.current.rightButton.wasReleasedThisFrame)
         {
-            CustomCursorController.canCustomCursorMove = true;
+            customCursorInputStuff.canCustomCursorMove = true;
             offsetVector = theCamera.transform.position - transform.position;
         }
         else
         {
-            if (CustomCursorController.canCustomCursorMove == false)
-            {
-                CustomCursorController.canCustomCursorMove = true;
-            }
-
             theCamera.transform.position = transform.position + offsetVector;
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        float scrollDelta = Mouse.current.scroll.ReadValue().y;
+        
+        if (scrollDelta != 0f)
         {
-            //if (Cursor.lockState == CursorLockMode.Locked)
-            //{
-            //    Cursor.lockState = CursorLockMode.None;
-            //}
-            //else if (Cursor.lockState == CursorLockMode.None)
-            //{
-            //    Cursor.lockState = CursorLockMode.Locked;
-            //}
-        }
-
-        if (Input.mouseScrollDelta.y != 0)
-        {
-            zoom = Mathf.Clamp(zoom + Input.mouseScrollDelta.y * scrollSensitivity, MIN_ZOOM_LIMIT, MAX_ZOOM_LIMIT);
+            zoom = Mathf.Clamp(zoom + scrollDelta * scrollSensitivity * Time.deltaTime, MIN_ZOOM_LIMIT, MAX_ZOOM_LIMIT);
             offsetVector = offsetVector.normalized * zoom;
         }
     }
@@ -150,6 +142,16 @@ public class CameraControllerTest : MonoBehaviour
         //Debug.Log("--------------------------------");
 
         // return angle;
+    }
+
+    private void OnEnable()
+    {
+        mouseHelper.Enable();
+    }
+
+    private void OnDisable()
+    {
+        mouseHelper.Disable();
     }
 }
 #pragma warning restore 0649

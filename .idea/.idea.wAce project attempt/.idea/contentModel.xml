@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Niknesh\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Niknesh\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_wAce project attempt.-544827331.00" t="ExcludeRecursive" />
+    <e p="D:\UnityProjects2\wAce project attempt" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="FlexibleColorPicker" t="Include">
+          <e p="ExampleScene" t="Include">
+            <e p="FCP_ExampleScript.cs" t="Include" />
+          </e>
+          <e p="Materials" t="Include">
+            <e p="FCP_Gradient.shader" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="FCP_SpriteMeshEditor.cs" t="Include" />
+            <e p="FlexibleColorPicker.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Input" t="Include">
+          <e p="MouseHelperStuff.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Pixelplacement" t="Include">
+            <e p="iTween" t="Include">
+              <e p="iTween.cs" t="Include" />
+              <e p="ReadMe!" t="Include">
+                <e p="ReadMe!.txt" t="Include" />
+              </e>
+              <e p="Sample" t="Include">
+                <e p="MoveSample.cs" t="Include" />
+                <e p="RotateSample.cs" t="Include" />
+                <e p="SampleInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Samples" t="Include">
+          <e p="Input System" t="Include">
+            <e p="1.0.0" t="Include">
+              <e p="Rebinding UI" t="Include">
+                <e p="GamepadIconsExample.cs" t="Include" />
+                <e p="RebindActionUI.cs" t="Include" />
+                <e p="RebindActionUIEditor.cs" t="Include" />
+                <e p="Unity.InputSystem.RebindingUI.asmdef" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="CameraControllerTest.cs" t="Include" />
+          <e p="CursorIdentifyFriendOrFoe.cs" t="Include" />
+          <e p="CustomCursorInputController.cs" t="Include" />
+          <e p="Extensions" t="Include">
+            <e p="ColorExtensions.cs" t="Include" />
+          </e>
+          <e p="Humanoid.cs" t="Include" />
+          <e p="IHumanoid.cs" t="Include" />
+          <e p="InheritableSingleton.cs" t="Include" />
+          <e p="PlayerCameraController.cs" t="Include" />
+          <e p="PlayerHumanoid.cs" t="Include" />
+          <e p="PlayerInventoryController.cs" t="Include" />
+          <e p="PlayerMovementController.cs" t="Include" />
+          <e p="Temp" t="Include">
+            <e p="BaseGun1.cs" t="Include" />
+            <e p="CsCursorSaveEntry.cs" t="Include" />
+            <e p="CsCustomCursorEntry.cs" t="Include" />
+            <e p="CursorListingEntry.cs" t="Include" />
+            <e p="CursorMenuController.cs" t="Include" />
+            <e p="CursorMenuCSController.cs" t="Include" />
+            <e p="CursorSaveDeletePrompt.cs" t="Include" />
+            <e p="CursorSaveEntry.cs" t="Include" />
+            <e p="CursorSaveLoad.cs" t="Include" />
+            <e p="CursorTextureEntry.cs" t="Include" />
+            <e p="CustomCursorImageController.cs" t="Include" />
+            <e p="CustomCursorRaycastTest.cs" t="Include" />
+            <e p="GameSceneSettings.cs" t="Include" />
+            <e p="GunBase.cs" t="Include" />
+            <e p="iTween" t="Include">
+              <e p="TweenAnim.cs" t="Include" />
+            </e>
+            <e p="LoadCustomCursors.cs" t="Include" />
+            <e p="MenuHandler.cs" t="Include" />
+            <e p="NewCursorEntry.cs" t="Include" />
+            <e p="PlayerBodyRotation.cs" t="Include" />
+            <e p="PlayerGameInput.cs" t="Include" />
+            <e p="RaycastTest.cs" t="Include" />
+            <e p="Rotation.cs" t="Include" />
+            <e p="TextureMergerTest.cs" t="Include" />
+            <e p="TextureScale.cs" t="Include" />
+            <e p="wAceCursor.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Unity.InputSystem.RebindingUI.csproj" t="IncludeRecursive" />
+      <e p="wAce project attempt.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,33 @@
+{
+    "name": "MouseHelperStuff",
+    "maps": [
+        {
+            "name": "MouseHelper",
+            "id": "e7584a8c-9abc-43f1-b4d3-8cafd8196ab2",
+            "actions": [
+                {
+                    "name": "Scroll",
+                    "type": "PassThrough",
+                    "id": "f5cf5cc6-7f72-4304-99a4-1ec04f57d700",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ea894dfd-c7ad-481d-b3df-5a0aa2cdc69d",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

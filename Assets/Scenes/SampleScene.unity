@@ -270,8 +270,6 @@ MonoBehaviour:
   whatIsObstacle:
     serializedVersion: 2
     m_Bits: 0
-  thisAnimator: {fileID: 0}
-  sprintEffect: {fileID: 0}
   jumpForce: 1000
   speedMult: 50
   maxDistanceFromGround: 0
@@ -306,8 +304,8 @@ MonoBehaviour:
   obj: {fileID: 1645191511}
   rotor: {fileID: 1094790028}
   dist: 3
-  mouseSensitivityX: 4
-  mouseSensitivityY: 2
+  mouseSensitivityX: 1
+  mouseSensitivityY: 1
   actualCursorPos: {x: 0, y: 0}
   x: 0
   y: 0
@@ -340,12 +338,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theCamera: {fileID: 963194225}
+  customCursorInputStuff: {fileID: 0}
   followDistance: 5
   mouseSensitivityX: 4
   mouseSensitivityY: 2
   scrollSensitivity: 2
   heightOffset: 0.5
-  actualCursorPos: {x: 0, y: 0}
 --- !u!1 &506804034
 GameObject:
   m_ObjectHideFlags: 0

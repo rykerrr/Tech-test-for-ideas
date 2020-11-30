@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using Object = System.Object;
+using InputField = UnityEngine.UI.InputField;
 
 #pragma warning disable 0649
 public class PlayerMovementController : MonoBehaviour
@@ -29,6 +33,9 @@ public class PlayerMovementController : MonoBehaviour
     private bool space;
     private bool c;
 
+    private int sprintAnimHash;
+    private int crouchAnimHash;
+
     private void Awake()
     {
         thisRb = GetComponent<Rigidbody>();
@@ -37,14 +44,22 @@ public class PlayerMovementController : MonoBehaviour
         thisAnimator = GetComponent<Animator>();
 
         mainCam = Camera.main;
+        sprintEffect.emitting = false;
+
+        sprintAnimHash = Animator.StringToHash("isSprinting");
+        crouchAnimHash = Animator.StringToHash("isCrouching");
     }
 
     private void FixedUpdate()
     {
-        Vector3 velocityVector/* = (Vector3.right * right + Vector3.forward * forth) * speedMult * Time.fixedDeltaTime*/;
+        Vector3
+            velocityVector /* = (Vector3.right * right + Vector3.forward * forth) * speedMult * Time.fixedDeltaTime*/;
 
-        velocityVector = new Vector3((mainCam.transform.right.x * right + mainCam.transform.forward.x * forth) * speedMult * Time.fixedDeltaTime * sprintMultiplier, thisRb.velocity.y,
-            (mainCam.transform.right.z * right + mainCam.transform.forward.z * forth) * speedMult * Time.fixedDeltaTime * sprintMultiplier);
+        velocityVector = new Vector3(
+            (mainCam.transform.right.x * right + mainCam.transform.forward.x * forth) * speedMult *
+            Time.fixedDeltaTime * sprintMultiplier, thisRb.velocity.y,
+            (mainCam.transform.right.z * right + mainCam.transform.forward.z * forth) * speedMult *
+            Time.fixedDeltaTime * sprintMultiplier);
 
         thisRb.velocity = velocityVector;
 
@@ -52,7 +67,8 @@ public class PlayerMovementController : MonoBehaviour
         {
             if (space && thisRb.velocity.y <= 0.06f)
             {
-                thisRb.AddForce(Vector3.up * jumpForce * Time.fixedDeltaTime, ForceMode.Impulse);
+                Vector3 force = Vector3.up * (jumpForce * Time.fixedDeltaTime);
+                thisRb.AddForce(force, ForceMode.Impulse);
 
                 if (isCrouching)
                 {
@@ -64,64 +80,112 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        right = Input.GetAxisRaw("Horizontal"); // a and d
-        forth = Input.GetAxisRaw("Vertical"); // w and s
+        bool isPointerOverUi = EventSystem.current.IsPointerOverGameObject(0);
+        bool isReceivingUiInput = false;
+        GameObject curSelectedUiObj = EventSystem.current.currentSelectedGameObject;
 
-        space = Input.GetKey(KeyCode.Space);
-        leftShift = Input.GetKey(KeyCode.LeftShift);
-        c = Input.GetKeyDown(KeyCode.C);
-
-        //BodyFollowsMouse();
-
-        if (leftShift && thisRb.velocity.y <= 0.06f && !fireControl.GetFiringState)
+        // Debug.Log("" + Object.Equals(curSelectedUiObj, null)); // http://prntscr.com/vnwik7
+        if (curSelectedUiObj != null)
         {
-            if (isCrouching)
+            if (curSelectedUiObj.GetComponent<InputField>())
             {
-                TryCrouch();
+                isReceivingUiInput = true;
             }
-
-            Sprint();
-
-            if (!sprintEffect.emitting)
+            else
             {
-                sprintEffect.emitting = true;
+                isReceivingUiInput = false;
             }
         }
         else
         {
-            sprintMultiplier = 1f;
+            isReceivingUiInput = false;
+        }
 
-            if (sprintEffect.emitting)
+        if (isReceivingUiInput)
+        {
+            ResetMovementInput();
+        }
+        else
+        {
+            if (isPointerOverUi)
             {
-                sprintEffect.emitting = false;
-            }
-
-            if (thisAnimator.GetBool("isSprinting"))
-            {
-                thisAnimator.SetBool("isSprinting", false);
+                ResetMovementInput();
             }
             else
             {
+                // Do this via an InputActions thing
+                // right = Input.GetAxisRaw("Horizontal"); // a and d
+                // forth = Input.GetAxisRaw("Vertical"); // w and s
 
+                right = Keyboard.current.dKey.isPressed ? 1 : Keyboard.current.aKey.isPressed ? -1 : 0;
+                forth = Keyboard.current.wKey.isPressed ? 1 : Keyboard.current.sKey.isPressed ? -1 : 0;
+
+                space = Keyboard.current.spaceKey.isPressed;
+                leftShift = Keyboard.current.leftShiftKey.isPressed;
+                c = Keyboard.current.cKey.wasPressedThisFrame;
+
+                //BodyFollowsMouse();
+
+                if (leftShift && thisRb.velocity.y <= 0.06f && !fireControl.GetFiringState)
+                {
+                    if (isCrouching)
+                    {
+                        TryCrouch();
+                    }
+
+                    Sprint();
+
+                    if (!sprintEffect.emitting)
+                    {
+                        sprintEffect.emitting = true;
+                    }
+                }
+                else
+                {
+                    sprintMultiplier = 1f;
+
+                    if (sprintEffect.emitting)
+                    {
+                        sprintEffect.emitting = false;
+                    }
+
+                    if (thisAnimator.GetBool(sprintAnimHash))
+                    {
+                        thisAnimator.SetBool(sprintAnimHash, false);
+                    }
+                    else
+                    {
+                    }
+                }
+
+                if (c)
+                {
+                    TryCrouch();
+                }
             }
         }
+    }
 
-        if (c)
-        {
-            TryCrouch();
-        }
+    private void ResetMovementInput()
+    {
+        right = 0;
+        forth = 0;
+
+        space = false;
+        leftShift = false;
+        c = false;
     }
 
     private void TryCrouch()
     {
         isCrouching = !isCrouching;
 
-        thisAnimator.SetBool("isCrouching", isCrouching);
+        thisAnimator.SetBool(crouchAnimHash, isCrouching);
 
 
-        if (thisAnimator.GetBool("isSprinting"))
+        if (thisAnimator.GetBool(sprintAnimHash))
         {
-            thisAnimator.SetBool("isSprinting", false);
+            thisAnimator.SetBool(sprintAnimHash, false);
         }
 
         if (isCrouching)
@@ -138,20 +202,20 @@ public class PlayerMovementController : MonoBehaviour
     {
         sprintMultiplier = Mathf.MoveTowards(sprintMultiplier, sprintMaxSpeed, sprintChangeDelta * Time.fixedDeltaTime);
 
-        if (thisAnimator.GetBool("isSprinting"))
+        if (thisAnimator.GetBool(sprintAnimHash))
         {
-
         }
         else
         {
-            thisAnimator.SetBool("isSprinting", true);
+            thisAnimator.SetBool(sprintAnimHash, true);
         }
     }
 
     private bool CheckIfGrounded()
     {
-        Ray ray = new Ray { origin = transform.position, direction = Vector3.down };
-        RaycastHit[] hits = Physics.RaycastAll(ray, transform.localScale.y / 2f + maxDistanceFromGround, whatIsObstacle);
+        Ray ray = new Ray {origin = transform.position, direction = Vector3.down};
+        RaycastHit[] hits =
+            Physics.RaycastAll(ray, transform.localScale.y / 2f + maxDistanceFromGround, whatIsObstacle);
 
         if (hits.Length > 0)
         {
@@ -198,31 +262,39 @@ public class PlayerMovementController : MonoBehaviour
             {
                 if (hits[i].collider)
                 {
-                    if (hits[i].collider.transform == transform || hits[i].collider.transform) // this check never runs for some reason
-                    { // check if object itself is ignored or this
+                    if (hits[i].collider.transform == transform || hits[i].collider.transform
+                    ) // this check never runs for some reason
+                    {
+                        // check if object itself is ignored or this
                         Debug.Log("hit ignroed obj or itself");
                         if (i == hits.Length - 1)
                         {
-                            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.farClipPlane));
+                            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                                Input.mousePosition.y, mainCam.farClipPlane));
                         }
 
                         continue;
                     }
                     else // didnt directly hit itself or ignored obj
-                    { // if it isnt perform other checks
+                    {
+                        // if it isnt perform other checks
                         if (hits[i].collider.attachedRigidbody)
-                        { // checks the main rigidbody (if the object has child colliders, then this is set to the parent rb
+                        {
+                            // checks the main rigidbody (if the object has child colliders, then this is set to the parent rb
                             if (hits[i].collider.attachedRigidbody.gameObject == gameObject)
-                            { // if the rigidbody's gameobject is the gameobject or ignored one
+                            {
+                                // if the rigidbody's gameobject is the gameobject or ignored one
                                 if (i == hits.Length - 1)
                                 {
-                                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.farClipPlane));
+                                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                                        Input.mousePosition.y, mainCam.farClipPlane));
                                 }
 
                                 continue;
                             }
                             else
-                            { // rigidbody isnt gameobject or ignored one
+                            {
+                                // rigidbody isnt gameobject or ignored one
                                 Debug.Log("set here 1");
 
                                 hitPos = hits[i].rigidbody.transform.position;
@@ -241,13 +313,15 @@ public class PlayerMovementController : MonoBehaviour
 
                 if (i == hits.Length - 1)
                 {
-                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.farClipPlane));
+                    hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+                        mainCam.farClipPlane));
                 }
             }
         }
         else
         {
-            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCam.farClipPlane));
+            hitPos = mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+                mainCam.farClipPlane));
         }
 
         Vector3 dir = hitPos - transform.position;
