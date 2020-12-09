@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using EventSystem = UnityEngine.EventSystems.EventSystem;
 
-public abstract class GunBase : MonoBehaviour
+#pragma warning disable 0649
+public abstract class GunBase : MonoBehaviour, IDamager
 {
     [Header("Set on initialize")] [SerializeField]
     private wAceCursor aceCursor;
 
     [SerializeField] private CustomCursorInputController customCursorInputStuff;
     [SerializeField] private CursorIdentifyFriendOrFoe cursorVisualStuff;
-    [SerializeField] private Transform rayContainer;
     [SerializeField] private RayType currentRayType;
 
     [FormerlySerializedAs("whatIsTargettable")] [Header("Options")] [SerializeField]
@@ -23,33 +23,37 @@ public abstract class GunBase : MonoBehaviour
     [SerializeField] private Light overheatLight;
     [SerializeField] private Transform gun;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private Transform rayPrefab;
-    [SerializeField] private Transform rayGunFireEffectPrefab;
-    [SerializeField] private float rayLifeTime = 0.06f;
-    [SerializeField] private float rayHoleLifetime = 0.1f;
+    [SerializeField] private DamageType typeOfDamage;
     [SerializeField] private float fireDelay = 0.1f;
-    [SerializeField] private float fancyRaySpeedDelta = 30f;
     [SerializeField] private float overheatMultiplier = 0.9f;
     [SerializeField] private float heatCoolDelay = 1f;
+    [SerializeField] private int damage;
 
     public LayerMask WhatIsTarget => whatIsTarget;
+    public bool CanFire => (Time.time > fireTimer);
+    public bool IsFiring => isFiring;
+    public int Damage => damage;
+    public DamageType TypeOfDamage => typeOfDamage;
 
     private bool[] indicatorCoroutine = new bool[2]; // 0 for mag, 1 for sight fire delay
-    private Transform indicator;
     private GameSceneSettings settings;
-    private Camera mainCam;
+    private Transform indicator;
     private float fireTimer;
     private float heatCoolTimer;
     private float heatPercentage = 0;
-    private bool isFiring = false;
     private bool hasOverheated = false;
+    private bool isFiring = false;
 
     private void Start()
     {
-        mainCam = Camera.main;
         settings = GameSceneSettings.Instance;
 
-        indicator = Instantiate(rayPrefab, Vector3.zero, Quaternion.identity);
+        indicator = Instantiate(GameSceneSettings.Instance.GetRayPrefab, Vector3.zero, Quaternion.identity);
+        indicator.name = "Fire Indicator";
+        // Debug.Log(indicator + " | " + indicatorMeshRenderer + " | " + indicator.GetComponent<MeshRenderer>()
+        //  + " | " + indicator.GetComponent<UnityEngine.Renderer>());
+
+
         CreateIndicator();
     }
 
@@ -59,7 +63,7 @@ public abstract class GunBase : MonoBehaviour
 
         indicator.localScale = new Vector3(localScale.x * 0.5f, localScale.y * 0.5f,
             localScale.z);
-        indicator.parent = rayContainer;
+        indicator.parent = GameSceneSettings.Instance.GetRayContainer;
 
         overheatLight.enabled = false;
         indicator.GetComponentInChildren<MeshRenderer>().material = indicatorMaterial;
@@ -68,7 +72,8 @@ public abstract class GunBase : MonoBehaviour
     protected void Update()
     {
         CheckOverheat();
-        Indicate(); // indicate expensive method invocation?
+        Indicate();
+        RefreshIff();
     }
 
     private void CheckOverheat()
@@ -99,6 +104,13 @@ public abstract class GunBase : MonoBehaviour
         // }
     }
 
+    private void RefreshIff()
+    {
+        settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, whatIsTarget, out GameObject objHit);
+
+        cursorVisualStuff.IdentifyFriendOrFoe(objHit);
+    }
+
     public void InvertIndicatorState()
     {
         indicator.gameObject.SetActive(!indicator.gameObject.activeSelf);
@@ -108,10 +120,15 @@ public abstract class GunBase : MonoBehaviour
     {
         if (!hasOverheated)
         {
-            if (Time.time > fireTimer)
+            if (CanFire)
             {
-                Transform rayClone = Instantiate(rayPrefab, Vector3.zero, Quaternion.identity);
-                Transform rayGunFireClone = Instantiate(rayGunFireEffectPrefab, Vector3.zero, Quaternion.identity);
+                isFiring = true;
+
+                Transform rayClone = Instantiate(GameSceneSettings.Instance.GetRayPrefab, Vector3.zero,
+                    Quaternion.identity);
+                Transform rayGunFireClone = Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero,
+                    Quaternion.identity);
+                Transform objHit = null;
 
                 RaycastHit[] hits = Physics.RaycastAll(firePoint.position, (mouseHit - firePoint.position).normalized,
                     float.MaxValue);
@@ -137,6 +154,7 @@ public abstract class GunBase : MonoBehaviour
                                 else
                                 {
                                     hitPos = hits[i].point;
+                                    objHit = hits[i].collider.transform;
                                     break;
                                 }
                             }
@@ -154,6 +172,7 @@ public abstract class GunBase : MonoBehaviour
                                 else
                                 {
                                     hitPos = hits[i].point;
+                                    objHit = hits[i].collider.transform;
                                     break;
                                 }
                             }
@@ -163,6 +182,16 @@ public abstract class GunBase : MonoBehaviour
                 else
                 {
                     hitPos = mouseHit;
+                }
+
+                if (objHit)
+                {
+                    IHumanoid hitHumanoid = null;
+
+                    if ((hitHumanoid = objHit.GetComponent<IHumanoid>()) != null)
+                    {
+                        hitHumanoid.TakeDamage(this);
+                    }
                 }
 
                 if (hitPos == new Vector3((int) 69, (int) 420, (int) 1111337))
@@ -182,17 +211,18 @@ public abstract class GunBase : MonoBehaviour
                 if (currentRayType == RayType.BasicRays)
                 {
                     Transform rayPointFireClone =
-                        Instantiate(rayGunFireEffectPrefab, Vector3.zero, Quaternion.identity);
+                        Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero,
+                            Quaternion.identity);
 
                     rayPointFireClone.position = hitPos;
                     rayPointFireClone.localScale *= 0.2f;
-                    rayPointFireClone.parent = rayContainer;
+                    rayPointFireClone.parent = GameSceneSettings.Instance.GetRayContainer;
 
                     rayClone.localScale = new Vector3(rayCloneLocalScale.x, rayCloneLocalScale.y,
                         (hitPos - firePoint.position).magnitude); // now how to move the ray...
-                    rayClone.parent = rayContainer;
+                    rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
 
-                    Destroy(rayClone.gameObject, rayLifeTime);
+                    Destroy(rayClone.gameObject, GameSceneSettings.Instance.GetRayLifeTime);
                 }
                 else if (currentRayType == RayType.FancyRays)
                 {
@@ -202,13 +232,14 @@ public abstract class GunBase : MonoBehaviour
                     float raySize = Mathf.Clamp(dist / 3f, 1f, 10f);
 
                     rayClone.localScale = new Vector3(rayClone.localScale.x, rayCloneLocalScale.y, raySize);
-                    rayClone.parent = rayContainer;
+                    rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
 
-                    StartCoroutine(MoveRay(rayClone, hitPos, fancyRaySpeedDelta * distMultiplier));
+                    StartCoroutine(MoveRay(rayClone, hitPos,
+                        GameSceneSettings.Instance.GetFancyRaySpeedDelta * distMultiplier));
                 }
 
 
-                Destroy(rayGunFireClone.gameObject, rayLifeTime);
+                Destroy(rayGunFireClone.gameObject, GameSceneSettings.Instance.GetRayLifeTime);
                 fireTimer = Time.time + fireDelay;
                 heatPercentage += 3f;
 
@@ -224,6 +255,39 @@ public abstract class GunBase : MonoBehaviour
                     heatCoolTimer = fireTimer + heatCoolDelay;
                 }
             }
+            else // do smth with gun cant fire yet delay / sight fire delay
+            {
+                if (indicatorCoroutine[1] == false)
+                {
+                    indicatorCoroutine[1] = true;
+                    // Debug.Log(fireTimer + " | " + Time.time + " | " + (fireTimer - Time.time) + " | " +
+                    //           (Time.time - fireTimer));
+                    StartCoroutine(
+                        FireNotReadyIndicatorCoroutine(sightFireDelayIndicator,
+                            (fireTimer - Time.time) / 2f)); // Time.time - fireTimer
+                    // because it waits until the gun can fire again in a nutshell
+                }
+            }
+        }
+        else // do smth with overheat coroutine
+        {
+            if (indicatorCoroutine[0] == false)
+            {
+                indicatorCoroutine[0] = true;
+                StartCoroutine(OverheatedIndicatorCoroutine(ammoOverheatIndicator));
+            }
+
+            if (indicatorCoroutine[1] == false)
+            {
+                indicatorCoroutine[1] = true;
+                // Debug.Log(fireTimer + " | " + Time.time + " | " + (fireTimer - Time.time) + " | " +
+                //           (Time.time - fireTimer));
+                StartCoroutine(FireNotReadyIndicatorCoroutine(sightFireDelayIndicator,
+                    (fireDelay) / 2f)); // Time.time - fireTimer
+                // because it waits until the gun can fire again in a nutshell
+            }
+
+            isFiring = false;
         }
     }
 
@@ -231,73 +295,73 @@ public abstract class GunBase : MonoBehaviour
     {
         // why is this an expensive method invocation
         // is it because of FullRaycast
-        
-        GameObject objHit = null;
+
         Vector3 hitPos = Vector3.zero;
         bool pointerIsOverUi = EventSystem.current.IsPointerOverGameObject(0);
         // is it over an event system (ui) object
 
         if (!pointerIsOverUi)
         {
-            hitPos = settings.RaycastFunctions.FullRaycast(gameObject, whatIsTarget,
-                out objHit); // where would fullraycast go to? what script?
+            hitPos = settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, whatIsTarget,
+                out GameObject objHit); // where would fullraycast go to? what script?
         }
 
         if (indicator.gameObject.activeSelf) // Indicator needs to be instantiated somewhere
         {
-            indicator.position = firePoint.position;
-            indicator.forward = (hitPos - firePoint.position).normalized;
-            indicator.localScale = new Vector3(indicator.localScale.x, indicator.localScale.y,
-                (hitPos - firePoint.position).magnitude);
-        }
+            Vector3 firePointPos = firePoint.position;
+            Vector3 indicLocalScale = indicator.localScale;
 
-        cursorVisualStuff.IdentifyFriendOrFoe(objHit);
+            indicator.position = firePointPos;
+            indicator.forward = (hitPos - firePointPos).normalized;
+            indicator.localScale = new Vector3(indicLocalScale.x, indicLocalScale.y,
+                (hitPos - firePointPos).magnitude);
+        }
     }
 
-    protected IEnumerator FireNotReadyIndicatorCoroutine(MeshRenderer indicator, int index, float waitTime)
+    protected IEnumerator FireNotReadyIndicatorCoroutine(MeshRenderer indicMr, float waitTime, int index = 1)
     {
         indicatorCoroutine[index] = true;
 
         Material
-            baseMat = indicator
+            baseMat = indicMr
                 .material; // possibly find a more efficient way to do this instead of creating a new mat each time...
         Material tempNewMat = new Material(baseMat);
         tempNewMat.color = Color.red;
 
-        indicator.material = tempNewMat;
+        indicMr.material = tempNewMat;
 
         yield return new WaitForSeconds(waitTime);
 
-        indicator.material = baseMat;
+        indicMr.material = baseMat;
 
         indicatorCoroutine[index] = false;
     }
 
-    protected IEnumerator OverheatedIndicatorCoroutine(MeshRenderer indicator, int index)
+    protected IEnumerator OverheatedIndicatorCoroutine(MeshRenderer indicMr, int index = 0)
     {
         indicatorCoroutine[index] = true;
         overheatLight.enabled = true;
 
         Material
-            baseMat = indicator
+            baseMat = indicMr
                 .material; // possibly find a more efficient way to do this instead of creating a new mat each time...
         Material tempNewMat = new Material(baseMat);
         tempNewMat.color = Color.red;
 
-        indicator.material = tempNewMat;
+        indicMr.material = tempNewMat;
 
         while (hasOverheated == true)
         {
             yield return new WaitForEndOfFrame();
         }
 
-        indicator.material = baseMat;
+        indicMr.material = baseMat;
         overheatLight.enabled = false;
 
         indicatorCoroutine[index] = false;
     }
 
-    protected IEnumerator MoveRay(Transform ray, Vector3 destination,
+    public virtual IEnumerator MoveRay(Transform ray, Vector3 destination,
         float delta) // do lerp instead with a for loop if u cant find a way to make this work nicely
     {
         Vector3 origin = ray.position;
@@ -308,13 +372,15 @@ public abstract class GunBase : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Transform rayPointFireClone = Instantiate(rayGunFireEffectPrefab, Vector3.zero, Quaternion.identity);
+        Transform rayPointFireClone =
+            Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero, Quaternion.identity);
 
         rayPointFireClone.position = destination;
         rayPointFireClone.localScale *= 0.2f;
-        rayPointFireClone.parent = rayContainer;
+        rayPointFireClone.parent = GameSceneSettings.Instance.GetRayContainer;
 
-        Destroy(rayPointFireClone.gameObject, rayHoleLifetime);
+        Destroy(rayPointFireClone.gameObject, GameSceneSettings.Instance.GetRayHoleLifeTime);
         Destroy(ray.gameObject);
     }
 }
+#pragma warning restore 0649

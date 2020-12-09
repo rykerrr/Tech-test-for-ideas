@@ -14,7 +14,7 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
         Friendly,
         Enemy
     };
-    
+
     // get custom cursor from here + position and shit
     [SerializeField] private CursorMenuController cursorMenu;
     [SerializeField] private Humanoid playerHumanoid;
@@ -24,12 +24,12 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
     private bool customCursorBeingUsed = false;
 
     // This moves it slower since it moves it along the UI, and the UI completely depends on the resolution of the screen
-        // Change its position via customCursor.transform.position whilst still doing the if checks on the anchored position
-        // customCursorPos = customCursor.transform.position = wAceCursor.transform.position = customCursorPos + mouseMovement;
-        //customCursorAnchoredPos = customCursor.rectTransform.anchoredPosition = wAceCursor.GetCursorRectTransform.anchoredPosition = customCursorAnchoredPos + mouseMovement;
-        //customCursorPos = customCursor.transform.position;
+    // Change its position via customCursor.transform.position whilst still doing the if checks on the anchored position
+    // customCursorPos = customCursor.transform.position = wAceCursor.transform.position = customCursorPos + mouseMovement;
+    //customCursorAnchoredPos = customCursor.rectTransform.anchoredPosition = wAceCursor.GetCursorRectTransform.anchoredPosition = customCursorAnchoredPos + mouseMovement;
+    //customCursorPos = customCursor.transform.position;
 
-        // deal with this
+    // deal with this
 
     private void Start()
     {
@@ -42,9 +42,7 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
         // compare their team to ours
         // The error could be in the raycastting method which would be annoying as fuck
         // or its just not being called when nothing is hit...
-        
-        Debug.Log(obj);
-        
+
         if (cursorMenu.UseIFF && customCursorBeingUsed)
         {
             int cursSpriteHashCode = customCursor.sprite.GetHashCode();
@@ -53,58 +51,40 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
             if (obj)
             {
                 IHumanoid hum = obj.GetComponent<IHumanoid>();
-                
                 if (hum != null)
                 {
                     if (hum.TeamColor == playerHumanoid.TeamColor)
                     {
-                        SetIFFCursorVisual(IFFCursorType.Friendly);
+                        SetIffCursorVisual(IFFCursorType.Friendly);
                     }
                     else if (hum.TeamColor != playerHumanoid.TeamColor)
                     {
-                        SetIFFCursorVisual(IFFCursorType.Enemy);
+                        SetIffCursorVisual(IFFCursorType.Enemy);
                     }
                     else
                     {
-                        SetIFFCursorVisual(IFFCursorType.Neutral);
+                        SetIffCursorVisual(IFFCursorType.Neutral);
                     }
                 }
                 else
                 {
-                    Debug.Log("Doesn't have a humanoid");
-                    // whot this?
                     if (cursSpriteHashCode != normalCursSpriteHashCode)
                     {
-                        Debug.Log("Should have been set to normal curs");
-                        SetIFFCursorVisual(IFFCursorType.Neutral);
-                    }
-                    else
-                    {
-                        Debug.Log("Already is normal curs");
+                        SetIffCursorVisual(IFFCursorType.Neutral);
                     }
                 }
             }
             else
             {
-                Debug.Log("Didn't hit anything");
                 if (cursSpriteHashCode != normalCursSpriteHashCode)
                 {
-                    Debug.Log("Should have been set to normal curs");
-                    SetIFFCursorVisual(IFFCursorType.Neutral);
-                }
-                else
-                {
-                    Debug.Log("Already is normal curs");
+                    SetIffCursorVisual(IFFCursorType.Neutral);
                 }
             }
         }
-        else
-        {
-            Debug.Log("Ehhhh....");
-        }
     }
 
-    private void SetIFFCursorVisual(IFFCursorType cursorVisualType)
+    private void SetIffCursorVisual(IFFCursorType cursorVisualType)
     {
         switch (cursorVisualType)
         {
@@ -122,14 +102,14 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
                 break;
         }
     }
-    
+
     public void CustomCursorUsage(bool use)
     {
         wAceCursor.gameObject.SetActive(!use);
         customCursor.gameObject.SetActive(use);
 
         customCursorBeingUsed = use;
-        
+
         if (cursorMenu.NormalCursor)
         {
             customCursor.sprite = cursorMenu.NormalCursor.GetCursorSprite;

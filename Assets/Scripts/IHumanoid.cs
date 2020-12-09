@@ -6,4 +6,6 @@ public interface IHumanoid
     int Health { get; }
     int MaxHealth { get; }
     Color TeamColor { get; }
+
+    void TakeDamage(IDamager damager);
 }

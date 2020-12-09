@@ -21,6 +21,7 @@ public class PlayerMovementController : MonoBehaviour
     private PlayerCameraController camController;
     private Camera mainCam;
     private Rigidbody thisRb = null;
+    private GunBase gun = null;
     private bool isGrounded => CheckIfGrounded();
     private bool isCrouching = false;
 
@@ -40,7 +41,8 @@ public class PlayerMovementController : MonoBehaviour
         thisRb = GetComponent<Rigidbody>();
         camController = GetComponent<PlayerCameraController>();
         thisAnimator = GetComponent<Animator>();
-
+        gun = GetComponent<GunBase>();
+        
         mainCam = Camera.main;
         sprintEffect.emitting = false;
 
@@ -126,8 +128,8 @@ public class PlayerMovementController : MonoBehaviour
 
                 // GetFiringState is gonna make problems but whatever
                 // firing state is a bool not an enum, isFiring in GunBase
-                if (leftShift && thisRb.velocity.y <= 0.06f/*&& !fireControl.GetFiringState*/)
-                {
+                if (leftShift && thisRb.velocity.y <= 0.06f && !gun.IsFiring) // thisRb.velocity.y is there so you don't sprint while jumping
+                {   // only if you're falling
                     if (isCrouching)
                     {
                         TryCrouch();

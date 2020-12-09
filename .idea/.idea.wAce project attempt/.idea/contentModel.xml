@@ -53,17 +53,7 @@
           <e p="CameraControllerTest.cs" t="Include" />
           <e p="CursorIdentifyFriendOrFoe.cs" t="Include" />
           <e p="CustomCursorInputController.cs" t="Include" />
-          <e p="Extensions" t="Include">
-            <e p="ColorExtensions.cs" t="Include" />
-          </e>
-          <e p="Humanoid.cs" t="Include" />
-          <e p="IHumanoid.cs" t="Include" />
-          <e p="InheritableSingleton.cs" t="Include" />
-          <e p="PlayerCameraController.cs" t="Include" />
-          <e p="PlayerHumanoid.cs" t="Include" />
-          <e p="PlayerInventoryController.cs" t="Include" />
-          <e p="PlayerMovementController.cs" t="Include" />
-          <e p="Temp" t="Include">
+          <e p="Experimental" t="Include">
             <e p="BaseGun1.cs" t="Include" />
             <e p="CsCursorSaveEntry.cs" t="Include" />
             <e p="CsCustomCursorEntry.cs" t="Include" />
@@ -89,10 +79,46 @@
             <e p="RaycastHelper.cs" t="Include" />
             <e p="RaycastTest.cs" t="Include" />
             <e p="Rotation.cs" t="Include" />
+            <e p="StateMachine" t="Include">
+              <e p="AIAttackState.cs" t="Include" />
+              <e p="AIGameSceneSettings.cs" t="Include" />
+              <e p="BuddyTest.cs" t="Include" />
+              <e p="DroneAI.cs" t="Include" />
+              <e p="DroneAttackState.cs" t="Include" />
+              <e p="DroneLocateState.cs" t="Include" />
+              <e p="DroneStats.cs" t="Include" />
+              <e p="DropOutStack.cs" t="Include" />
+              <e p="EmptyState.cs" t="Include" />
+              <e p="EnemyAI.cs" t="Include" />
+              <e p="EnemyState.cs" t="Include" />
+              <e p="EnemyStats.cs" t="Include" />
+              <e p="HumanoidStats.cs" t="Include" />
+              <e p="ICanFire.cs" t="Include" />
+              <e p="ICanMove.cs" t="Include" />
+              <e p="IDamager.cs" t="Include" />
+              <e p="IdleState.cs" t="Include" />
+              <e p="LocatorState.cs" t="Include" />
+              <e p="SerializedDropOutStateStack.cs" t="Include" />
+              <e p="State.cs" t="Include" />
+              <e p="StateMachine.cs" t="Include" />
+              <e p="TurretAI.cs" t="Include" />
+              <e p="TurretAttackState.cs" t="Include" />
+              <e p="TurretLocateState.cs" t="Include" />
+              <e p="TurretStats.cs" t="Include" />
+            </e>
             <e p="TextureMergerTest.cs" t="Include" />
             <e p="TextureScale.cs" t="Include" />
             <e p="wAceCursor.cs" t="Include" />
           </e>
+          <e p="Extensions" t="Include">
+            <e p="ColorExtensions.cs" t="Include" />
+          </e>
+          <e p="Humanoid.cs" t="Include" />
+          <e p="IHumanoid.cs" t="Include" />
+          <e p="InheritableSingleton.cs" t="Include" />
+          <e p="PlayerCameraController.cs" t="Include" />
+          <e p="PlayerInventoryController.cs" t="Include" />
+          <e p="PlayerMovementController.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

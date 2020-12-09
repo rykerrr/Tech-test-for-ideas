@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+#pragma warning disable 0649
 public class CustomCursorImageController : MonoBehaviour
 {
     [SerializeField] private wAceCursor wAceCursor;
@@ -44,6 +45,7 @@ public class CustomCursorImageController : MonoBehaviour
         customCursorImage.name = entry.GetCursorName;
     }
 }
+#pragma warning restore 0649
 
 public enum CustomCursorType
 {

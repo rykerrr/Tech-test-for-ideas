@@ -82,7 +82,7 @@ public class Rotation : MonoBehaviour // Rotation should be handled here
 
         if (!pointerIsOverUi)
         {
-            hitPos = settings.RaycastFunctions.FullRaycast(gameObject, whatIsTarget, out var objHit); // where would fullraycast go to? what script?
+            hitPos = settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, whatIsTarget, out var objHit); // where would fullraycast go to? what script?
         }
 
         // this handles the rotation

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+#pragma warning disable 0649
 public class PlayerGameInput : MonoBehaviour // perhaps raycast here?
 {
     [SerializeField] private GunBase equippedGun; // afterwards change to tool
@@ -18,7 +19,7 @@ public class PlayerGameInput : MonoBehaviour // perhaps raycast here?
         if (Mouse.current.leftButton.isPressed)
         {
             // fire
-            equippedGun.Fire(settings.RaycastFunctions.FullRaycast(gameObject, equippedGun.WhatIsTarget, out GameObject hit));
+            equippedGun.Fire(settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, equippedGun.WhatIsTarget, out GameObject hit));
         }
         if (Keyboard.current.qKey.wasPressedThisFrame)
         {
@@ -26,6 +27,5 @@ public class PlayerGameInput : MonoBehaviour // perhaps raycast here?
             equippedGun.InvertIndicatorState();
         }
     }
-    
-   
 }
+#pragma warning restore 0649
