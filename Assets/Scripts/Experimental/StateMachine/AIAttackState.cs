@@ -26,9 +26,8 @@ public class AIAttackState : EnemyState
         if (canFire)
         {
             RaycastHelper raycasts = GameSceneSettings.Instance.RaycastFunctions;
-            Vector3 hitPos = raycasts.FromAToBRaycast(firePoint.gameObject, firePoint.forward, whatIsTarget,
+            Vector3 hitPos = raycasts.FromAToBRaycast(firePoint.gameObject, firePoint.forward, (LayerMask)~0,
                 out GameObject objHit);
-
 
             if (objHit != null)
             {
@@ -39,61 +38,61 @@ public class AIAttackState : EnemyState
                 }
             }
 
-            Transform rayClone =
-                Object.Instantiate(GameSceneSettings.Instance.GetRayPrefab, Vector3.zero, Quaternion.identity) as
-                    Transform;
+            // Transform rayClone =
+            //     Object.Instantiate(GameSceneSettings.Instance.GetRayPrefab, Vector3.zero, Quaternion.identity) as
+            //         Transform;
             Transform rayGunFireClone =
-                Object.Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero,
+                Object.Instantiate(GameSceneSettings.Instance.GetFireEffectPrefab, Vector3.zero,
                     Quaternion.identity) as Transform;
 
             Vector3 firePos = firePoint.position;
 
-            rayGunFireClone.position = firePos;
-            rayGunFireClone.localScale *= 0.5f;
-            rayGunFireClone.parent = Owner.StateMachineOwner.transform;
+            // rayGunFireClone.position = firePos;
+            // rayGunFireClone.localScale *= 0.5f;
+            // rayGunFireClone.parent = Owner.StateMachineOwner.transform;
+            //
+            // rayClone.position = firePos;
+            // rayClone.forward = (hitPos - firePos).normalized;
+            //
+            // Vector3 rayCloneLocalScale = rayClone.localScale;
 
-            rayClone.position = firePos;
-            rayClone.forward = (hitPos - firePos).normalized;
-
-            Vector3 rayCloneLocalScale = rayClone.localScale;
-
-            if (GameSceneSettings.Instance.rayType == RayType.BasicRays)
-            {
-                Transform rayPointFireClone =
-                    Object.Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero,
-                        Quaternion.identity) as Transform;
-
-                rayPointFireClone.position = hitPos;
-                rayPointFireClone.localScale *= 0.2f;
-
-                if (objHit == null)
-                {
-                    rayPointFireClone.parent = GameSceneSettings.Instance.GetRayContainer;
-                }
-                else
-                {
-                    rayPointFireClone.parent = objHit.transform;
-                }
-
-                rayClone.localScale = new Vector3(rayCloneLocalScale.x, rayCloneLocalScale.y,
-                    (hitPos - firePoint.position).magnitude); // now how to move the ray...
-                rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
-
-                Object.Destroy(rayClone.gameObject, GameSceneSettings.Instance.GetRayLifeTime);
-            }
-            else if (GameSceneSettings.Instance.rayType == RayType.FancyRays)
-            {
-                float dist = (hitPos - firePoint.position).magnitude;
-                float distMultiplier = Mathf.Clamp(dist * 0.1f, 0.1f, 10f);
-
-                float raySize = Mathf.Clamp(dist / 3f, 1f, 10f);
-
-                rayClone.localScale = new Vector3(rayClone.localScale.x, rayCloneLocalScale.y, raySize);
-                rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
-
-                Owner.StateMachineOwner.StartCoroutine(MoveRay(rayClone, hitPos,
-                    GameSceneSettings.Instance.GetFancyRaySpeedDelta * distMultiplier));
-            }
+            // if (GameSceneSettings.Instance.rayType == RayType.BasicRays)
+            // {
+            //     Transform rayPointFireClone =
+            //         Object.Instantiate(GameSceneSettings.Instance.GetOnHitEffect, Vector3.zero,
+            //             Quaternion.identity) as Transform;
+            //
+            //     rayPointFireClone.position = hitPos;
+            //     rayPointFireClone.localScale *= 0.2f;
+            //
+            //     if (objHit == null)
+            //     {
+            //         rayPointFireClone.parent = GameSceneSettings.Instance.GetRayContainer;
+            //     }
+            //     else
+            //     {
+            //         rayPointFireClone.parent = objHit.transform;
+            //     }
+            //
+            //     rayClone.localScale = new Vector3(rayCloneLocalScale.x, rayCloneLocalScale.y,
+            //         (hitPos - firePoint.position).magnitude); // now how to move the ray...
+            //     rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
+            //
+            //     Object.Destroy(rayClone.gameObject, GameSceneSettings.Instance.GetRayLifeTime);
+            // }
+            // else if (GameSceneSettings.Instance.rayType == RayType.FancyRays)
+            // {
+            //     float dist = (hitPos - firePoint.position).magnitude;
+            //     float distMultiplier = Mathf.Clamp(dist * 0.1f, 0.1f, 10f);
+            //
+            //     float raySize = Mathf.Clamp(dist / 3f, 1f, 10f);
+            //
+            //     rayClone.localScale = new Vector3(rayClone.localScale.x, rayCloneLocalScale.y, raySize);
+            //     rayClone.parent = GameSceneSettings.Instance.GetRayContainer;
+            //
+            //     GameSceneSettings.Instance.StartCoroutine(GameSceneSettings.Instance.MoveRay(rayClone, hitPos,
+            //         GameSceneSettings.Instance.GetFancyRaySpeedDelta * distMultiplier, objHit));
+            // }
 
 
             Object.Destroy(rayGunFireClone.gameObject, GameSceneSettings.Instance.GetRayLifeTime);
@@ -115,25 +114,5 @@ public class AIAttackState : EnemyState
         #endregion
 
         return fireTimer;
-    }
-
-    public virtual IEnumerator MoveRay(Transform ray, Vector3 destination,
-        float delta) // do lerp instead with a for loop if u cant find a way to make this work nicely
-    {
-        Vector3 origin = ray.position;
-        while ((destination - ray.position).magnitude >= 0.1f)
-        {
-            ray.position = Vector3.MoveTowards(ray.position, destination, delta * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
-
-        Transform rayPointFireClone =
-            Object.Instantiate(GameSceneSettings.Instance.GetRayHoleEffectPrefab, Vector3.zero,
-                Quaternion.identity) as Transform;
-        rayPointFireClone.position = destination;
-        rayPointFireClone.localScale *= 0.2f;
-        rayPointFireClone.parent = GameSceneSettings.Instance.GetRayContainer;
-        Object.Destroy(rayPointFireClone.gameObject, GameSceneSettings.Instance.GetRayHoleLifeTime);
-        Object.Destroy(ray.gameObject);
     }
 }

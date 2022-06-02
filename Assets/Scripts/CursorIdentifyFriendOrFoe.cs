@@ -46,22 +46,41 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
         if (cursorMenu.UseIFF && customCursorBeingUsed)
         {
             int cursSpriteHashCode = customCursor.sprite.GetHashCode();
-            int normalCursSpriteHashCode = cursorMenu.NormalCursor.GetHashCode();
+            int normalCursSpriteHashCode = cursorMenu.NeutralCursor.GetHashCode();
 
             if (obj)
             {
                 IHumanoid hum = obj.GetComponent<IHumanoid>();
+
                 if (hum != null)
                 {
-                    if (hum.TeamColor == playerHumanoid.TeamColor)
+                    // Debug.Log((hum.TeamColor == playerHumanoid.TeamColor) + " |" + hum.TeamColor + " | " + playerHumanoid.TeamColor);
+
+                    bool isSameTeam = ColorExtensions.CompareColor32SWithoutAlpha(
+                        (Color32)hum.TeamColor,
+                        (Color32)playerHumanoid.TeamColor);
+                    bool isSameTeamHex = (ColorExtensions.Color32ToHex(hum.TeamColor) ==
+                                          ColorExtensions.Color32ToHex(playerHumanoid.TeamColor));
+
+                    if (isSameTeam != isSameTeamHex)
+                    {
+                        Debug.LogError("SameTeamHex and SameTeam are different");
+                        Debug.Break();
+                    }
+
+                    if (obj == playerHumanoid.gameObject)
+                    {
+                        SetIffCursorVisual(IFFCursorType.Neutral);
+                    }
+                    else if (isSameTeam)
                     {
                         SetIffCursorVisual(IFFCursorType.Friendly);
                     }
-                    else if (hum.TeamColor != playerHumanoid.TeamColor)
+                    else if (!isSameTeam)
                     {
                         SetIffCursorVisual(IFFCursorType.Enemy);
                     }
-                    else
+                    else // this makes no sense then
                     {
                         SetIffCursorVisual(IFFCursorType.Neutral);
                     }
@@ -89,8 +108,8 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
         switch (cursorVisualType)
         {
             case IFFCursorType.Neutral:
-                customCursor.sprite = cursorMenu.NormalCursor.GetCursorSprite;
-                customCursor.color = cursorMenu.NormalCursor.GetCursorColor;
+                customCursor.sprite = cursorMenu.NeutralCursor.GetCursorSprite;
+                customCursor.color = cursorMenu.NeutralCursor.GetCursorColor;
                 break;
             case IFFCursorType.Friendly:
                 customCursor.sprite = cursorMenu.FriendlyCursor.GetCursorSprite;
@@ -110,10 +129,10 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
 
         customCursorBeingUsed = use;
 
-        if (cursorMenu.NormalCursor)
+        if (cursorMenu.NeutralCursor)
         {
-            customCursor.sprite = cursorMenu.NormalCursor.GetCursorSprite;
-            customCursor.color = cursorMenu.NormalCursor.GetCursorColor; // have to deal with IFF as well
+            customCursor.sprite = cursorMenu.NeutralCursor.GetCursorSprite;
+            customCursor.color = cursorMenu.NeutralCursor.GetCursorColor; // have to deal with IFF as well
         }
     }
 }

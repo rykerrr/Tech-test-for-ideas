@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,7 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
     [SerializeField] private InputField cursorNameInputField;
     [SerializeField] private Button saveCursorButton;
     [SerializeField] private Button saveCursorAsNewButton;
+    [SerializeField] private Toggle useCustomCursorToggle;
     [SerializeField] private Text selectedTextureName;
     [SerializeField] private Text selectedCursorName;
     [SerializeField] private string cursorToLoadName;
@@ -68,11 +70,11 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
     private bool useCustomCursor;
     private bool useIFF = true;
 
-    private NewCursorEntry normalCursor;
+    private NewCursorEntry neutralCursor;
     private NewCursorEntry enemyCursor;
     private NewCursorEntry friendlyCursor;
 
-    public NewCursorEntry NormalCursor => normalCursor;
+    public NewCursorEntry NeutralCursor => neutralCursor;
     public NewCursorEntry EnemyCursor => enemyCursor;
     public NewCursorEntry FriendlyCursor => friendlyCursor;
 
@@ -94,6 +96,67 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
         }
 
         ReloadCursorsFromSavedCursors();
+        LoadPlayerPrefsForCustomCursorUsage();
+    }
+
+    private void SavePlayerPrefsForCustomCursorUsage()
+    {
+        PlayerPrefs.SetInt("CustomCursorUsage", useCustomCursor ? 1 : 0);
+
+        if (useCustomCursor)
+        {
+            PlayerPrefs.SetString("NeutralCursor", neutralCursor.GetCursorName);
+            PlayerPrefs.SetString("FriendlyCursor", friendlyCursor.GetCursorName);
+            PlayerPrefs.SetString("EnemyCursor", enemyCursor.GetCursorName);
+        }
+        
+#if UNITY_EDITOR
+        Debug.Log("Custom cursors saved!");
+#endif
+    }
+    
+    private void LoadPlayerPrefsForCustomCursorUsage()
+    {
+        if (cursorEntries.Count > 0)
+        {
+            if (PlayerPrefs.HasKey("CustomCursorUsage"))
+            {
+                bool usedCustomCursorLastTime = PlayerPrefs.GetInt("CustomCursorUsage") >= 1;
+                useCustomCursor = usedCustomCursorLastTime;
+                
+                if (usedCustomCursorLastTime)
+                {
+                    string neutralCursorName = "";
+                    string enemyCursorName = "";
+                    string friendlyCursorName = "";
+
+                    if (PlayerPrefs.HasKey("NeutralCursor"))
+                    {
+                        neutralCursorName = PlayerPrefs.GetString("NeutralCursor");
+                        curSelectedCursorEntry = this.neutralCursor = cursorEntries.Find(x => x.GetCursorName == neutralCursorName);
+                        OnClick_SelectCursorAs(0);
+                    }
+
+                    if (PlayerPrefs.HasKey("FriendlyCursor"))
+                    {
+                        friendlyCursorName = PlayerPrefs.GetString("FriendlyCursor");
+                        curSelectedCursorEntry = this.friendlyCursor = cursorEntries.Find(x => x.GetCursorName == friendlyCursorName);
+                        OnClick_SelectCursorAs(1);
+                    }
+
+                    if (PlayerPrefs.HasKey("EnemyCursor"))
+                    {
+                        enemyCursorName = PlayerPrefs.GetString("EnemyCursor");
+                        curSelectedCursorEntry = this.enemyCursor = cursorEntries.Find(x => x.GetCursorName == enemyCursorName);
+                        OnClick_SelectCursorAs(2);
+                    }
+
+                    Debug.Log(friendlyCursorName + " | " + enemyCursorName + " | " + neutralCursorName);
+                    Debug.Log("e" + this.neutralCursor + " | " + this.friendlyCursor + " | " + this.enemyCursor);
+                    Toggle_CustomCursor(useCustomCursor);
+                }
+            }
+        }
     }
 
     private void Update()
@@ -341,7 +404,7 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
                 savedCursors.Remove(cursorToDelete);
             }
 
-            if (removeEntry = cursorEntries.Find(x => x.Equals(cursorToDelete)))
+            if ((removeEntry = cursorEntries.Find(x => x.Equals(cursorToDelete))) != null)
             {
                 removeEntry.SetSaveState(SaveState.NotSaved);
             }
@@ -526,8 +589,8 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
         switch (cursor)
         {
             case 0:
-                selectedCursorPreviewImages[0].sprite = normalCursor.GetCursorSprite;
-                selectedCursorPreviewImages[0].color = normalCursor.GetCursorColor;
+                selectedCursorPreviewImages[0].sprite = neutralCursor.GetCursorSprite;
+                selectedCursorPreviewImages[0].color = neutralCursor.GetCursorColor;
                 break;
             case 1:
                 selectedCursorPreviewImages[1].sprite = friendlyCursor.GetCursorSprite;
@@ -776,7 +839,7 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
         switch (selection)
         {
             case 0:
-                normalCursor = curSelectedCursorEntry;
+                neutralCursor = curSelectedCursorEntry;
                 break;
             case 1:
                 friendlyCursor = curSelectedCursorEntry;
@@ -797,8 +860,19 @@ public class CursorMenuController : InheritableSingleton<CursorMenuController>
     public void Toggle_CustomCursor(bool toggle)
     {
         useCustomCursor = toggle;
-
+        useCustomCursorToggle.isOn = toggle;
+        
         cursorVisualStuff.CustomCursorUsage(useCustomCursor);
+    }
+
+    private void OnEnable()
+    {
+        LoadPlayerPrefsForCustomCursorUsage();
+    }
+    
+    private void OnDisable()
+    {
+        SavePlayerPrefsForCustomCursorUsage();
     }
 }
 #pragma warning restore 0649

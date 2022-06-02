@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseGun1 : GunBase 
+public class BaseGun1 : GunBase
 {
-    
+
 }

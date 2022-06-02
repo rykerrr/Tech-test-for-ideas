@@ -43,7 +43,7 @@ public class DroneAttackState : AIAttackState
 
             Owner.StateMachineOwner.ThisStats.LastTargetPosition = targPos;
 
-            DrawLinesTowardsTarget(targPos);
+            // DrawLinesTowardsTarget(targPos);
 
             #region pls format better #1
 

@@ -14,13 +14,23 @@ public class PlayerGameInput : MonoBehaviour // perhaps raycast here?
     {
         settings = GameSceneSettings.Instance;
     }
+
     void Update()
     {
         if (Mouse.current.leftButton.isPressed)
         {
-            // fire
-            equippedGun.Fire(settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, equippedGun.WhatIsTarget, out GameObject hit));
+            if (equippedGun != null)
+            {
+                // fire
+                Vector3 raycastHit =
+                    settings.RaycastFunctions.FromCameraToMouseRaycast(gameObject, equippedGun.WhatIsTarget,
+                        out GameObject hit);
+
+
+                equippedGun.Fire(raycastHit); // change to event
+            }
         }
+
         if (Keyboard.current.qKey.wasPressedThisFrame)
         {
             // turn indicator on/off

@@ -38,7 +38,7 @@ public class CustomCursorImageController : MonoBehaviour
 
     public void ReloadCursorImage()
     {
-        NewCursorEntry entry = cursorMenu.NormalCursor;
+        NewCursorEntry entry = cursorMenu.NeutralCursor;
 
         customCursorImage.sprite = entry.GetCursorSprite;
         customCursorImage.color = entry.GetCursorColor;

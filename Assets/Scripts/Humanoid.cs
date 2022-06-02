@@ -12,6 +12,8 @@ public class Humanoid : MonoBehaviour, IHumanoid
     [SerializeField] private int maxHealth;
     [SerializeField] private Color teamColor;
 
+    private Vector3 healthBarOffset;
+    
     public string HumanoidName
     {
         get => humanoidName;
@@ -47,6 +49,7 @@ public class Humanoid : MonoBehaviour, IHumanoid
         {
             healthBarSizeMult = healthBar.localScale.z;
             healthBarMr = healthBar.GetComponentInChildren<MeshRenderer>();
+            healthBarOffset = healthBar.localPosition;
             
             SetHealthbarHealth(health, maxHealth);
         }
@@ -55,9 +58,9 @@ public class Humanoid : MonoBehaviour, IHumanoid
     private void SetHealthbarHealth(int curHealth, int maxHealth)
     {
         float healthRatio = (float) curHealth / (float) maxHealth;
-        Debug.Log(healthRatio);
+        // Debug.Log(healthRatio);
 
-        healthBar.position = new Vector3(healthBar.position.x, healthBar.position.y, healthBarSizeMult / 2f * healthRatio);
+        healthBar.localPosition = healthBarOffset;
         healthBar.localScale =
             new Vector3(healthBar.localScale.x, healthBar.localScale.y, healthRatio * healthBarSizeMult);
 
@@ -83,9 +86,9 @@ public class Humanoid : MonoBehaviour, IHumanoid
     {
         if (health - damager.Damage <= 0)
         {
-            Debug.LogWarning(humanoidName + ", " + name + " has died.");
+            // Debug.LogWarning(humanoidName + ", " + name + " has died.");
             gameObject.SetActive(false);
-            Debug.Break();
+            // Debug.Break();
         }
         else
         {

@@ -61,8 +61,9 @@ public class CameraControllerTest : MonoBehaviour
             //next we adjust the rotation based on the captured mouse movement
             //we clamp the pitch (X angle) of the camera to avoid flipping
             //we also adjust the values to account for mouse sensitivity settings
+            float angleToClamp = theCamera.transform.eulerAngles.x + cameraMovement.y * mouseSensitivityY;
             theCamera.transform.eulerAngles = new Vector3(
-                ClampAngle(theCamera.transform.eulerAngles.x + cameraMovement.y * mouseSensitivityY, LOW_LIMIT, HIGH_LIMIT),
+                angleToClamp.ClampAngle(LOW_LIMIT, HIGH_LIMIT),
                 theCamera.transform.eulerAngles.y + cameraMovement.x * mouseSensitivityX, 0); // figure out a way to clamp angles yet again
 
             //then we move out to the desired follow distance
@@ -85,63 +86,6 @@ public class CameraControllerTest : MonoBehaviour
             zoom = Mathf.Clamp(zoom + scrollDelta * scrollSensitivity * Time.deltaTime, MIN_ZOOM_LIMIT, MAX_ZOOM_LIMIT);
             offsetVector = offsetVector.normalized * zoom;
         }
-    }
-
-    private float ClampAngle(float angle, float min, float max)
-    {
-        // method 2
-
-        angle = Mathf.Repeat(angle, 360);
-        min = Mathf.Repeat(min, 360);
-        max = Mathf.Repeat(max, 360);
-        bool inverse = false;
-        var tmin = min;
-        var tangle = angle;
-        if (min > 180)
-        {
-            inverse = !inverse;
-            tmin -= 180;
-        }
-        if (angle > 180)
-        {
-            inverse = !inverse;
-            tangle -= 180;
-        }
-        var result = !inverse ? tangle > tmin : tangle < tmin;
-        if (!result)
-            angle = min;
-
-        inverse = false;
-        tangle = angle;
-        var tmax = max;
-        if (angle > 180)
-        {
-            inverse = !inverse;
-            tangle -= 180;
-        }
-        if (max > 180)
-        {
-            inverse = !inverse;
-            tmax -= 180;
-        }
-
-        result = !inverse ? tangle < tmax : tangle > tmax;
-        if (!result)
-            angle = max;
-        return angle;
-
-        // method 1
-
-        //if (angle > 180) angle = 360 - angle;
-        //Debug.Log(angle + " | " + min + " | " + max);
-        //angle = Mathf.Clamp(angle, min, max);
-        //Debug.Log(angle + " | " + min + " | " + max);
-        //if (angle < 0) angle = 360 + angle;
-        //Debug.Log(angle + " | " + min + " | " + max);
-
-        //Debug.Log("--------------------------------");
-
-        // return angle;
     }
 
     private void OnEnable()

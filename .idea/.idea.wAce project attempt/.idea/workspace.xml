@@ -20,26 +20,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="905da1a6-d301-4a0f-b206-096a9bd6b33f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/contentModel.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.wAce project attempt/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crouch.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crouch.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sprint.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Sprint.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AI/Experimental/Brobot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AI/Experimental/Brobot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AI/Experimental/Healthbar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AI/Experimental/Healthbar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/1167vo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/1167vo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/850" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/850.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/Vuchic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/Vuchic.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/bob" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/CustomCursorSaves/bob.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameSceneTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameSceneTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraControllerTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/BaseGun1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/BaseGun1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/CursorMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/CursorMenuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/CustomCursorImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/CustomCursorImageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/CustomCursorRaycastTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/CustomCursorRaycastTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/GameSceneSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/GameSceneSettings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/GunBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/GunBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/PlayerGameInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/PlayerGameInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/RaycastHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/RaycastHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/Rotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/Rotation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/LocatorState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/LocatorState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/ColorExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/ColorExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHumanoid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHumanoid.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,84 +78,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/6b/9fa446ca/SerializableAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Experimental for Animations/Mixamo/Scripts/PlayerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/Projectile + Object Pooling/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5406A456-CF73-4443-B3D0-2A7D123287F1/7c/387450d6/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretStats.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/9e/3ac7746a/Cursor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/b1/3fbf0b73/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/SerializedDropOutStateStack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Experimental for Animations/FBXExport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Extensions/Mathf Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/5c/2ba1c534/KeyCode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/91/c38e2d72/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/ICanMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/0c/498de92a/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIGameSceneSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/BuddyTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/0c/498de92a/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/Projectile + Object Pooling/Projectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/1c/2456e6fb/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/e9/9b251fcf/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/91/c38e2d72/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/SerializedDropOutStateStack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/ICanMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/ICanFire.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorSaveLoad.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/CursorMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BasicRay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Playerinput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/BaseGun1.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/RaycastHelper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/NewCursorEntry.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GameSceneSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/PlayerGameInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/Rotation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Temp/GunBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovementController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CursorIdentifyFriendOrFoe.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/IDamager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/ICanMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIGameSceneSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/SerializedStateDropOutStack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/SerializedDropOutStateStack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DropOutStack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/CustomCursorImageController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIDrone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretLocateState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/StateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneLocateState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EmptyState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/IdleState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/State.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/HumanoidStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TestScript1.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/GameSceneSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/BuddyTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/RaycastHelper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/ICanFire.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/PlayerGameInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/IHumanoid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyStats.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/LocatorState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/TurretAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Experimental/GunBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Humanoid.cs" />
-      </list>
-    </option>
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/EnemyState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CD14385-55E6-4C0E-AEDA-2393D3C9CF4A/9e/3ac7746a/Cursor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27AABE10-6DF7-43FB-9D3F-CCFA6937F501/6b/9fa446ca/SerializableAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/AIGameSceneSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Experimental/StateMachine/DroneAI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1iySeE3mP2TaYWBMeWR4ym9yY31" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -139,7 +116,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -155,8 +132,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -164,8 +142,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -204,6 +183,16 @@
       <workItem from="1607346705591" duration="10733000" />
       <workItem from="1607437197089" duration="10029000" />
       <workItem from="1607529233814" duration="864000" />
+      <workItem from="1607629113374" duration="29515000" />
+      <workItem from="1608119404370" duration="4788000" />
+      <workItem from="1608337367478" duration="3704000" />
+      <workItem from="1608375366413" duration="8431000" />
+      <workItem from="1608405955696" duration="5940000" />
+      <workItem from="1608475401085" duration="7547000" />
+      <workItem from="1615129123713" duration="599000" />
+      <workItem from="1615133529010" duration="3895000" />
+      <workItem from="1615318939280" duration="429000" />
+      <workItem from="1637440750738" duration="657000" />
     </task>
     <servers />
   </component>
@@ -238,10 +227,11 @@
     <state x="-845" y="238" key="RiderGenerateDialog/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1607289985375" />
     <state x="727" y="248" key="RiderGenerateDialog/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1603910867487" />
     <state x="-845" y="241" key="RiderGenerateDialog/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1607445776658" />
-    <state x="424" y="182" width="998" height="739" key="SettingsEditor" timestamp="1603714414189">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="424" y="187" width="998" height="739" key="SettingsEditor" timestamp="1607694814295">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="424" y="182" width="998" height="739" key="SettingsEditor/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1603714414189" />
+    <state x="424" y="187" key="SettingsEditor/0.0.1920.1080/-1360.155.1360.768@0.0.1920.1080" timestamp="1607694814295" />
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup" timestamp="1604517072928">
       <screen x="-1360" y="155" width="1360" height="738" />
     </state>
@@ -263,21 +253,23 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="0" width="1332" height="713" key="dock-window-2/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1607348505467" />
-    <state x="-929" y="242" width="701" height="563" key="find.popup" timestamp="1607355917406">
-      <screen x="-1360" y="155" width="1360" height="738" />
+    <state x="-929" y="246" width="701" height="586" key="find.popup" timestamp="1608342310170">
+      <screen x="-1360" y="155" width="1360" height="768" />
     </state>
     <state x="-929" y="242" width="701" height="563" key="find.popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1607355917406" />
     <state x="609" y="124" width="701" height="801" key="find.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606752054210" />
-    <state x="-1024" y="240" key="run.anything.popup" timestamp="1607445115004">
+    <state x="-929" y="246" width="701" height="586" key="find.popup/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1608342310170" />
+    <state x="-1024" y="240" key="run.anything.popup" timestamp="1608477506819">
       <screen x="-1360" y="155" width="1360" height="768" />
     </state>
     <state x="-1024" y="237" key="run.anything.popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1607350401389" />
-    <state x="-1024" y="240" key="run.anything.popup/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1607445115004" />
-    <state x="-919" y="322" width="672" height="497" key="search.everywhere.popup" timestamp="1607445695351">
+    <state x="-1024" y="240" key="run.anything.popup/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1608477506819" />
+    <state x="-919" y="322" width="672" height="497" key="search.everywhere.popup" timestamp="1608340289139">
       <screen x="-1360" y="155" width="1360" height="768" />
     </state>
     <state x="-919" y="315" width="672" height="477" key="search.everywhere.popup/0.0.1920.1050/-1360.155.1360.738@-1360.155.1360.738" timestamp="1607355220495" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1360.155.1360.738@0.0.1920.1050" timestamp="1606595878965" />
-    <state x="-919" y="322" width="672" height="497" key="search.everywhere.popup/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1607445695351" />
+    <state x="-919" y="322" width="672" height="497" key="search.everywhere.popup/0.0.1920.1080/-1360.155.1360.768@-1360.155.1360.768" timestamp="1608340289139" />
+    <state x="623" y="235" width="949" height="699" key="search.everywhere.popup/0.0.1920.1080/-1360.155.1360.768@0.0.1920.1080" timestamp="1607694908364" />
   </component>
 </project>

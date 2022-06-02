@@ -151,10 +151,10 @@ public class CustomCursorRaycastTest : MonoBehaviour
         wAceCursor.gameObject.SetActive(!use);
         customCursor.gameObject.SetActive(use);
 
-        if(cursorMenu.NormalCursor)
+        if(cursorMenu.NeutralCursor)
         {
-            customCursor.sprite = cursorMenu.NormalCursor.GetCursorSprite;
-            customCursor.color = cursorMenu.NormalCursor.GetCursorColor; // have to deal with IFF as well
+            customCursor.sprite = cursorMenu.NeutralCursor.GetCursorSprite;
+            customCursor.color = cursorMenu.NeutralCursor.GetCursorColor; // have to deal with IFF as well
         }
     }
 }

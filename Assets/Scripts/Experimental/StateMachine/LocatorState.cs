@@ -31,13 +31,28 @@ public class LocatorState : EnemyState
             Collider[] hits = Physics.OverlapSphere(Owner.StateMachineOwner.transform.position,
                 Owner.StateMachineOwner.ThisStats.GetLocatorRange,
                 Owner.StateMachineOwner.ThisStats.WhatIsTarget);
-
-            foreach (Collider hit in hits)
+            
+            if (hits.Length > 0)
             {
-                if (hit.GetComponent<IHumanoid>() != null)
+                foreach (Collider hit in hits)
                 {
-                    Owner.StateMachineOwner.ThisStats.target = hit.transform;
-                    return TryLocateEnemy();
+                    if (hit.attachedRigidbody == null)
+                    {
+                        if (hit.GetComponent<IHumanoid>() != null)
+                        {
+                            Owner.StateMachineOwner.ThisStats.target = hit.transform;
+                            return TryLocateEnemy();
+                        }
+                    }
+                    else
+                    {
+                        if (hit.attachedRigidbody.gameObject.GetComponent<IHumanoid>() != null)
+                        {
+                            Owner.StateMachineOwner.ThisStats.target = hit.attachedRigidbody.transform;
+                            return TryLocateEnemy();
+                        }
+                    }
+
                 }
             }
         }
@@ -62,7 +77,7 @@ public class LocatorState : EnemyState
                 }
             }
 
-            DrawLocatorLines();
+            // DrawLocatorLines();
         }
 
         return null;
