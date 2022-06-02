@@ -389,6 +389,9 @@ public abstract class GunBase : MonoBehaviour, IDamager
         playerGunAnimator.SetBool(gunReloadHash, false);
 
         fireTimer = Time.time;
+
+        sightFireDelayIndicator.material = indicatorMaterial;
+        indicatorCoroutine[1] = false;
     }
     
     private void Indicate() // Set it to Vector3.zero or move it to an object-specific variable

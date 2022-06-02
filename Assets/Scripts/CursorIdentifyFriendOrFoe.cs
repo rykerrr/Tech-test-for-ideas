@@ -45,6 +45,8 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
 
         if (cursorMenu.UseIFF && customCursorBeingUsed)
         {
+            if (cursorMenu.NeutralCursor == null) return;
+            
             int cursSpriteHashCode = customCursor.sprite.GetHashCode();
             int normalCursSpriteHashCode = cursorMenu.NeutralCursor.GetHashCode();
 
@@ -112,6 +114,10 @@ public class CursorIdentifyFriendOrFoe : MonoBehaviour // also the IFF
                 customCursor.color = cursorMenu.NeutralCursor.GetCursorColor;
                 break;
             case IFFCursorType.Friendly:
+                Debug.Log(cursorMenu);
+                Debug.Log(cursorMenu.FriendlyCursor);
+                Debug.Log(cursorMenu.FriendlyCursor.GetCursorSprite);
+            
                 customCursor.sprite = cursorMenu.FriendlyCursor.GetCursorSprite;
                 customCursor.color = cursorMenu.FriendlyCursor.GetCursorColor;
                 break;
